@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Synthetic Sample Data</title>
+  <style>
+	table {
+	  table-layout: auto; /* Default value, ensures the table adjusts to the content */
+	  width: auto; /* Allows the table to resize based on its content */
+	  border-collapse: collapse;
+	}
+
+	th, td {
+	  white-space: nowrap; /* Prevents wrapping of content */
+	  padding: 4px; /* Optional: Adds minimal padding for readability */
+	  text-align: left; /* Optional: Aligns the content to the left */
+	  border: 1px solid #ddd;
+	}
+	.toc {
+      margin-bottom: 20px;
+    }
+	a {
+      text-decoration: none;
+      color: #003366;
+    }
+	.banner-image {
+		width: 100vw;
+	}
+  </style>
+
+</head>
+<body>
+
+<img src="./img/CCM-banner.png" alt="Floating Banner" class="banner-image" width="1000px">
+<a href="./index.html">[Home]</a> <a href="./CompassDataTables.html">[Tables]</a> <a href="./CompassDataElements.html">[Elements]</a> <a href="./CompassSyntheticSampleData.html">[Sample]</a>
+<h2 id="top">Synthetic Sample Data</h2>
+
+<!-- Table of Contents -->
+<div class="toc">
+<h3>Data Tables</h3>
+  <ul>
+    <li><a href="#hc">HOSPITALIZATION_COMPASS</a></li>
+	<li><a href="#vd">VISIT_DETAIL</a></li>
+	<li><a href="#d">DEATH</a></li>
+    <li><a href="#co">CONDITION_OCCURRENCE</a></li>
+    <li><a href="#po">PROCEDURE_OCCURRENCE</a></li>
+    <li><a href="#m">MEASUREMENT</a></li>
+    <li><a href="#o">OBSERVATION</a></li>
+    <li><a href="#de">DRUG_EXPOSURE</a></li>
+  </ul>
+<h3>Reference Tables</h3>
+  <ul>
+    <li><a href="#p">PROVIDER</a></li>
+	<li><a href="#l">LOCATION</a></li>
+	<li><a href="#cs">CARE_SITE</a></li>
+  </ul>
+</div>
+<i>Last updated 11/17/2024</i> 
+<hr>
+
+<!-- HOSPITALIZATION_COMPASS Table -->
+<br>
+<strong id="hc">HOSPITALIZATION_COMPASS</strong><a href="#top">  [Top]</a>
+<table>
+  <tr>
+    <th>visit_occurrence_id</th>
+    <th>person_id</th>
+    <th>visit_start_datetime</th>
+    <th>visit_end_datetime</th>
+    <th>location_id</th>
+    <th>age_at_admit</th>
+    <th>gender_concept_id</th>
+    <th>race_concept_id</th>
+    <th>ethnicity_concept_id</th>
+    <th>visit_concept_id</th>
+    <th>admitted_from_concept_id</th>
+    <th>discharged_to_concept_id</th>
+    <th>payer_concept_id</th>
+    <th>flag_includes_nicu_admit</th>
+    <th>flag_includes_icu_admit</th>
+    <th>icu_los_hours</th>
+  </tr>
+  <tr>
+    <td>520512345</td>
+    <td>24998745</td>
+    <td>2022-06-30 20:39</td>
+    <td>2022-07-01 20:39</td>
+    <td>217</td>
+    <td>18</td>
+    <td>8532</td>
+    <td>8527</td>
+    <td>38003564</td>
+    <td>9203</td>
+    <td>9202</td>
+    <td>0</td>
+    <td>436</td>
+    <td>0</td>
+    <td>0</td>
+    <td>NULL</td>
+  </tr>
+  <tr>
+    <td>572023456</td>
+    <td>594787654</td>
+    <td>2022-05-15 20:39</td>
+    <td>2022-05-28 20:39</td>
+    <td>217</td>
+    <td>58</td>
+    <td>8532</td>
+    <td>8527</td>
+    <td>38003564</td>
+    <td>9203</td>
+    <td>9202</td>
+    <td>0</td>
+    <td>436</td>
+    <td>0</td>
+    <td>1</td>
+    <td>37</td>
+  </tr>
+  <tr>
+    <td>519034567</td>
+    <td>113676543</td>
+    <td>2022-06-02 20:39</td>
+    <td>2022-06-04 20:39</td>
+    <td>217</td>
+    <td>21</td>
+    <td>8507</td>
+    <td>8516</td>
+    <td>38003564</td>
+    <td>9201</td>
+    <td>9201</td>
+    <td>0</td>
+    <td>289</td>
+    <td>0</td>
+    <td>1</td>
+    <td>22.7</td>
+  </tr>
+</table>
+
+<!-- VISIT_DETAIL Table -->
+<br>
+<strong id="vd">VISIT_DETAIL</strong><a href="#top">  [Top]</a>
+<table>
+  <tr>
+    <th>visit_detail_id</th>
+    <th>visit_occurrence_id</th>
+    <th>person_id</th>
+    <th>care_site_id</th>
+	<th>place_of_service_id</th>
+    <th>visit_detail_start_datetime</th>
+    <th>visit_detail_end_datetime</th>
+  </tr>
+  <tr>
+    <td>-206565656</td>
+    <td>520512345</td>
+    <td>24998745</td>
+    <td>6016</td>
+	<td>4160026</td>
+    <td>2022-06-30 22:39:00</td>
+    <td>2022-07-01 12:39:00</td>
+  </tr>
+  <tr>
+    <td>1011787878</td>
+    <td>572023456</td>
+    <td>594787654</td>
+    <td>6017</td>
+	<td>4148496</td>
+    <td>2022-05-15 21:39:00</td>
+    <td>2022-05-28 13:39:00</td>
+  </tr>
+  <tr>
+    <td>1111898989</td>
+    <td>519034567</td>
+    <td>113676543</td>
+    <td>6018</td>
+	<td>40481392</td>
+    <td>2022-06-02 22:39:00</td>
+    <td>2022-06-04 14:39:00</td>
+  </tr>
+</table>
+
+<!-- DEATH Table -->
+<br>
+<strong id="d">DEATH</strong><a href="#top">  [Top]</a>
+<table>
+  <tr>
+    <th>person_id</th>
+    <th>death_datetime</th>
+    <th>death_type_concept_id</th>
+  </tr>
+  <tr>
+    <td>24998745</td>
+    <td>2022-07-01 20:39:00.0000000</td>
+    <td>32817</td>
+  </tr>
+  <tr>
+    <td>594787654</td>
+    <td>2022-05-28 20:39:00.0000000</td>
+    <td>32817</td>
+  </tr>
+  <tr>
+    <td>113676543</td>
+    <td>2022-06-04 20:39:00.0000000</td>
+    <td>32817</td>
+  </tr>
+</table>
+
+<!-- CONDITION_OCCURRENCE Table -->
+<br>
+<strong id="co">CONDITION_OCCURRENCE</strong><a href="#top">  [Top]</a>
+<table>
+  <tr>
+    <th>visit_occurance_id</th>
+    <th>person_id</th>
+    <th>condition_concept_id</th>
+    <th>condition_type</th>
+    <th>condition_priority</th>
+    <th>source_code</th>
+  </tr>
+  <tr>
+    <td>520512345</td>
+    <td>24998745</td>
+    <td>35211391</td>
+    <td>P</td>
+    <td>1</td>
+    <td>R55</td>
+  </tr>
+  <tr>
+    <td>572023456</td>
+    <td>594787654</td>
+    <td>35206757</td>
+    <td>S</td>
+    <td>7</td>
+    <td>D649</td>
+  </tr>
+  <tr>
+    <td>519034567</td>
+    <td>113676543</td>
+    <td>35208969</td>
+    <td>P</td>
+    <td>1</td>
+    <td>M545</td>
+  </tr>
+</table>
+
+<!-- PROCEDURE_OCCURRENCE Table -->
+<br>
+<strong id="po">PROCEDURE_OCCURRENCE</strong><a href="#top">  [Top]</a>
+<table>
+  <tr>
+    <th>visit_occurance_id</th>
+    <th>person_id</th>
+    <th>procedure_concept_id</th>
+    <th>procedure_datetime</th>
+    <th>procedure_type</th>
+    <th>procedure_priority</th>
+    <th>provider_id</th>
+    <th>source_code</th>
+  </tr>
+  <tr>
+    <td>520512345</td>
+    <td>24998745</td>
+    <td>2788103</td>
+    <td>2022-06-30 22:39:00.0000000</td>
+    <td>S</td>
+    <td>25</td>
+    <td>1234</td>
+    <td>B41B1ZZ</td>
+  </tr>
+  <tr>
+    <td>572023456</td>
+    <td>594787654</td>
+    <td>2747028</td>
+    <td>2022-05-15 21:39:00.0000000</td>
+    <td>P</td>
+    <td>1</td>
+    <td>2345</td>
+    <td>0DBC8ZZ</td>
+  </tr>
+  <tr>
+    <td>519034567</td>
+    <td>113676543</td>
+    <td>2726351</td>
+    <td>2022-06-02 22:39:00.0000000</td>
+    <td>S</td>
+    <td>42</td>
+    <td>3456</td>
+    <td>02HV33Z</td>
+  </tr>
+</table>
+
+
+<!-- MEASUREMENT Table -->
+<br>
+<strong id="m">MEASUREMENT</strong><a href="#top">  [Top]</a>
+<table>
+  <tr>
+    <th>vist_occurrence_id</th>
+    <th>person_id</th>
+    <th>measurement_concept_id</th>
+    <th>measurement_datetime</th>
+    <th>value_as_number</th>
+    <th>value_source_value</th>
+    <th>value_as_concept_id</th>
+    <th>unit_concept_id</th>
+    <th>range_low</th>
+    <th>range_high</th>
+    <th>provider_id</th>
+    <th>source_code</th>
+    <th>source_code_units</th>
+  </tr>
+  <tr>
+    <td>520512345</td>
+    <td>24998745</td>
+    <td>3006906</td>
+    <td>2022-06-30 22:39:00.0000000</td>
+    <td>9.1</td>
+    <td>9.1</td>
+    <td>NULL</td>
+    <td>8840</td>
+    <td>8.3</td>
+    <td>10.6</td>
+    <td>1234</td>
+    <td>318558</td>
+    <td>563</td>
+  </tr>
+  <tr>
+    <td>572023456</td>
+    <td>594787654</td>
+    <td>3013682</td>
+    <td>2022-05-15 21:39:00.0000000</td>
+    <td>22</td>
+    <td>22</td>
+    <td>NULL</td>
+    <td>8840</td>
+    <td>8</td>
+    <td>26</td>
+    <td>2345</td>
+    <td>318521</td>
+    <td>563</td>
+  </tr>
+  <tr>
+    <td>519034567</td>
+    <td>113676543</td>
+    <td>3023314</td>
+    <td>2022-06-02 22:39:00.0000000</td>
+    <td>NULL</td>
+    <td>Clot present.</td>
+    <td>21499175</td>
+    <td>8554</td>
+    <td>38</td>
+    <td>48.8</td>
+    <td>3456</td>
+    <td>320999</td>
+    <td>567</td>
+  </tr>
+</table>
+
+
+<!-- OBSERVATION Table -->
+<br>
+<strong id="o">OBSERVATION</strong><a href="#top">  [Top]</a>
+<table>
+  <tr>
+    <th>vist_occurrence_id</th>
+    <th>person_id</th>
+    <th>observation_concept_id</th>
+    <th>observation_datetime</th>
+    <th>value_as_number</th>
+    <th>value_as_string</th>
+    <th>value_as_concept_id</th>
+    <th>unit_concept_id</th>
+    <th>provider_id</th>
+    <th>source_code</th>
+    <th>source_code_units</th>
+  </tr>
+  <tr>
+    <td>520512345</td>
+    <td>24998745</td>
+    <td>37043283</td>
+    <td>2022-06-30 22:39:00.0000000</td>
+    <td>425</td>
+    <td>425</td>
+    <td>NULL</td>
+    <td>8587</td>
+    <td>1234</td>
+    <td>420027010</td>
+    <td>613</td>
+  </tr>
+  <tr>
+    <td>572023456</td>
+    <td>594787654</td>
+    <td>37043283</td>
+    <td>2022-05-15 21:39:00.0000000</td>
+    <td>330</td>
+    <td>330</td>
+    <td>NULL</td>
+    <td>8587</td>
+    <td>2345</td>
+    <td>39055649</td>
+    <td>613</td>
+  </tr>
+  <tr>
+    <td>519034567</td>
+    <td>113676543</td>
+    <td>37043283</td>
+    <td>2022-06-02 22:39:00.0000000</td>
+    <td>550</td>
+    <td>550</td>
+    <td>NULL</td>
+    <td>8587</td>
+    <td>3456</td>
+    <td>420027010</td>
+    <td>613</td>
+  </tr>
+</table>
+
+
+<!-- DRUG_EXPOSURE Table -->
+<br>
+<strong id="de">DRUG_EXPOSURE</strong><a href="#top">  [Top]</a>
+<table>
+  <tr>
+    <th>visit_occurrence_id</th>
+    <th>person_id</th>
+    <th>drug_concept_id</th>
+    <th>drug_exposure_datetime</th>
+    <th>amount_value</th>
+    <th>amount_unit_concept_id</th>
+    <th>infusion_rate</th>
+    <th>infusion_rate_unit_concept_id</th>
+    <th>infusion_event_concept_id</th>
+    <th>route_concept_id</th>
+    <th>admit_site_concept_id</th>
+    <th>dose_quantity</th>
+    <th>dose_quantity_unit_concept_id</th>
+    <th>frequency_concept_id</th>
+    <th>provider_id</th>
+    <th>flag_intravenous_med</th>
+    <th>flag_discharge_med</th>
+    <th>flag_existing_home_med</th>
+    <th>source_code</th>
+    <th>source_value</th>
+  </tr>
+  <tr>
+    <td>520512345</td>
+    <td>24998745</td>
+    <td>968985</td>
+    <td>2022-06-30 22:39:00.0000000</td>
+    <td>40</td>
+    <td>8587</td>
+    <td>40</td>
+    <td>8587</td>
+    <td>NULL</td>
+    <td>NULL</td>
+    <td>NULL</td>
+    <td>40</td>
+    <td>8587</td>
+    <td>NULL</td>
+    <td>1234</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>88355320</td>
+    <td>40 mL</td>
+  </tr>
+  <tr>
+    <td>572023456</td>
+    <td>594787654</td>
+    <td>968985</td>
+    <td>2022-05-15 21:39:00.0000000</td>
+    <td>40.06</td>
+    <td>8587</td>
+    <td>0</td>
+    <td>8587</td>
+    <td>NULL</td>
+    <td>NULL</td>
+    <td>NULL</td>
+    <td>40.06</td>
+    <td>8587</td>
+    <td>NULL</td>
+    <td>2345</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>88355320</td>
+    <td>40.06 mL</td>
+  </tr>
+  <tr>
+    <td>519034567</td>
+    <td>113676543</td>
+    <td>36029520</td>
+    <td>2022-06-02 22:39:00.0000000</td>
+    <td>1</td>
+    <td>NULL</td>
+    <td>0</td>
+    <td>NULL</td>
+    <td>NULL</td>
+    <td>NULL</td>
+    <td>NULL</td>
+    <td>1</td>
+    <td>NULL</td>
+    <td>NULL</td>
+    <td>3456</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>628489</td>
+    <td>1 tab(s)</td>
+  </tr>
+</table>
+
+<!-- PROVIDER Table -->
+<br>
+<strong id="p">PROVIDER</strong><a href="#top">  [Top]</a>
+<table>
+  <tr>
+    <th>provider_id</th>
+    <th>specialty_concept_id</th>
+    <th>year_of_birth</th>
+    <th>gender_concept_id</th>
+  </tr>
+  <tr>
+    <td>1234</td>
+    <td>32577</td>
+    <td>1949</td>
+    <td>8507</td>
+  </tr>
+  <tr>
+    <td>2345</td>
+    <td>32577</td>
+    <td>1956</td>
+    <td>8507</td>
+  </tr>
+  <tr>
+    <td>3456</td>
+    <td>32577</td>
+    <td>1978</td>
+    <td>8532</td>
+  </tr>
+</table>
+
+
+<!-- LOCATION Table -->
+<br>
+<strong id="l">LOCATION</strong><a href="#top">  [Top]</a>
+<table>
+  <tr>
+    <th>location_id</th>
+    <th>address_1</th>
+    <th>address_2</th>
+    <th>city</th>
+    <th>state</th>
+    <th>zip</th>
+    <th>location_source_value</th>
+  </tr>
+  <tr>
+    <td>217</td>
+    <td>HS HospitalA</td>
+    <td>123 First St</td>
+    <td>Pittsburgh</td>
+    <td>PA</td>
+    <td>15213</td>
+    <td>AAA</td>
+  </tr>
+  <tr>
+    <td>218</td>
+    <td>HS HospitalB</td>
+    <td>123 Second St</td>
+    <td>Pittsburgh</td>
+    <td>PA</td>
+    <td>15232</td>
+    <td>BBB</td>
+  </tr>
+  <tr>
+    <td>219</td>
+    <td>HS HospitalC</td>
+    <td>123 Third St</td>
+    <td>Pittsburgh</td>
+    <td>PA</td>
+    <td>15215</td>
+    <td>CCC</td>
+  </tr>
+</table>
+
+
+<!-- CARE_SITE Table -->
+<br>
+<strong id="cs">CARE_SITE</strong><a href="#top">  [Top]</a>
+<table>
+  <tr>
+    <th>care_site_id</th>
+    <th>care_site_name</th>
+    <th>place_of_service_concept_id</th>
+    <th>location_id</th>
+    <th>care_site_source_value</th>
+    <th>place_of_service_source_value</th>
+  </tr>
+  <tr>
+    <td>6016</td>
+    <td>5E GENERAL MEDICINE</td>
+    <td>4160026</td>
+    <td>217</td>
+    <td>H5E</td>
+    <td>AAA</td>
+  </tr>
+  <tr>
+    <td>6017</td>
+    <td>NEURO ICU</td>
+    <td>4148496</td>
+    <td>217</td>
+    <td>H5IC</td>
+    <td>AAA</td>
+  </tr>
+  <tr>
+    <td>6018</td>
+    <td>ICU MEDICAL</td>
+    <td>40481392</td>
+    <td>217</td>
+    <td>H5IM</td>
+    <td>AAA</td>
+  </tr>
+</table>
+
+
+
+
+</body>
+</html>
