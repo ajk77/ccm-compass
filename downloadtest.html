@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox Download List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .checkbox-container {
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Select Items:</h2>
+    <div class="checkbox-container">
+        <input type="checkbox" id="item1" name="item" value="Apple">
+        <label for="item1">Apple</label><br>
+        
+        <input type="checkbox" id="item2" name="item" value="Banana">
+        <label for="item2">Banana</label><br>
+        
+        <input type="checkbox" id="item3" name="item" value="Orange">
+        <label for="item3">Orange</label><br>
+        
+        <input type="checkbox" id="item4" name="item" value="Grape">
+        <label for="item4">Grape</label><br>
+        
+        <input type="checkbox" id="item5" name="item" value="Mango">
+        <label for="item5">Mango</label><br>
+    </div>
+    
+    <button onclick="downloadList()">Download Selected Items</button>
+
+    <script>
+        function downloadList() {
+            // Get all checked checkboxes
+            const checkedItems = Array.from(document.querySelectorAll('input[name="item"]:checked'))
+                .map(item => item.value);
+            
+            if (checkedItems.length === 0) {
+                alert('Please select at least one item!');
+                return;
+            }
+
+            // Create the content for the file
+            const content = "Selected Items:\n" + checkedItems.join('\n');
+            
+            // Create a blob with the content
+            const blob = new Blob([content], { type: 'text/plain' });
+            
+            // Create a temporary URL for the blob
+            const url = window.URL.createObjectURL(blob);
+            
+            // Create a temporary link element
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'selected_items.txt';
+            
+            // Programmatically click the link to trigger download
+            document.body.appendChild(link);
+            link.click();
+            
+            // Clean up
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
