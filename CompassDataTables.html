@@ -4,53 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Compass Data Tables</title>
- <style>
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    th, td {
-      padding: 4px;
-      text-align: left;
-      border: 1px solid #ddd;
-    }
-    .col-30 {
-      width: 30%;
-    }
-    .col-10 {
-      width: 10%;
-    }
-    .col-60 {
-      width: 60%;
-    }
-    .sub-table {
-      display: none; /* Hide sub-table initially */
-      background-color: #f9f9f9;
-    }
-    .toc {
-      margin-bottom: 20px;
-    }
-	a {
-      text-decoration: none;
-      color: #003366;
-    }
-	.banner-image {
-		width: 100vw;
-	}
-  </style>
-  <script>
-  function toggleSubTable(id) {
-    const subTable = document.getElementById(id);
-    
-    // Ensure the initial display property is set to 'none' if undefined
-    if (!subTable.style.display) {
-      subTable.style.display = 'none';
-    }
-    
-    // Toggle display between 'none' and 'table-row'
-    subTable.style.display = (subTable.style.display === 'none') ? 'table-row' : 'none';
-  }
-  </script>
+  <link rel="stylesheet" href="./CompassStyles.css">
+  <script src="./CompassScripts.js"></script>
 </head>
 <body>
 
@@ -59,8 +14,8 @@
 <h2 id="top">Compass Data Tables</h2>
 
 <!-- Table of Contents -->
-<div class="toc">
 <h3>Data Tables</h3>
+<div class="toc">
   <ul>
     <li><a href="#hc">HOSPITALIZATION_COMPASS</a></li>
 	<li><a href="#vd">VISIT_DETAIL</a></li>
@@ -72,7 +27,9 @@
     <li><a href="#o">OBSERVATION</a></li>
     <li><a href="#drug">DRUG_EXPOSURE</a></li>
   </ul>
+  </div>
 <h3>Reference Tables</h3>
+<div class="toc">
   <ul>
     <li><a href="#p">PROVIDER</a></li>
 	<li><a href="#l">LOCATION</a></li>
@@ -84,15 +41,18 @@
 	<li><a href="#vsd">VALUE_SET_DEFINITION</a></li>
 	<li><a href="#vs">VALUE_SET</a></li>
   </ul>
+  </div>
  <h3>Derived Tables</h3>
+	<div class="toc">
   <ul>
     <li><a href="#did">DAILY_IMV_DETAIL</a></li>
     <li><a href="#cc">COMORBIDITIES</a></li>
 	<!--<li><a href="#fdc">FLAG_DAILY</a></li>-->
 	<!--<li><a href="#fhc">FLAG_HOSPITALIZATION</a></li>-->
   </ul>
+  </div>
 </div>
-<i>Last updated 03/02/2025</i> 
+<i>Last updated 04/07/2025</i> 
 <hr>
 
 <!-- HOSPITALIZATION_COMPASS Table -->
@@ -109,7 +69,7 @@
   <tr><td>visit_start_datetime</td><td>DATETIME</td><td>Date and time when the visit started</td></tr>
   <tr><td>visit_end_datetime</td><td>DATETIME</td><td>Date and time when the visit ended</td></tr>
   <tr onclick="toggleSubTable('sub-table-location')" style="cursor: pointer;">
-    <td>location_id</td><td>INT</td><td>Identifier for the hospital [Click for details]</td>
+    <td>location_id</td><td>INT</td><td>Identifier for the hospital <span class="cell-link">[Click for details]</span></td>
   </tr>
     <tr id="sub-table-location" class="sub-table">
     <td colspan="2">
@@ -147,7 +107,7 @@
     <td>age_at_admit</td><td>INT</td><td>Age in years (for safe harbor datasets, all ages &ge;80 will be represented with the average age of all &ge;80 hospitalizations)</td>
   </tr>
   <tr onclick="toggleSubTable('sub-table-gender')" style="cursor: pointer;">
-    <td>gender_concept_id</td><td>INT</td><td>Identifier for the gender concept [Click for details]</td>
+    <td>gender_concept_id</td><td>INT</td><td>Identifier for the gender concept <span class="cell-link">[Click for details]</span></td>
   </tr>
     <tr id="sub-table-gender" class="sub-table">
     <td colspan="2">
@@ -160,7 +120,7 @@
     </td>
   </tr>
   <tr onclick="toggleSubTable('sub-table-race')" style="cursor: pointer;">
-    <td>race_concept_id</td><td>INT</td><td>Identifier for the race concept [Click for details]</td>
+    <td>race_concept_id</td><td>INT</td><td>Identifier for the race concept <span class="cell-link">[Click for details]</span></td>
   </tr>
     <tr id="sub-table-race" class="sub-table">
     <td colspan="2">
@@ -176,7 +136,7 @@
     </td>
   </tr>
   <tr onclick="toggleSubTable('sub-table-ethnicity')" style="cursor: pointer;">
-    <td>ethnicity_concept_id</td><td>INT</td><td>Identifier for the ethnicity concept [Click for details]</td>
+    <td>ethnicity_concept_id</td><td>INT</td><td>Identifier for the ethnicity concept <span class="cell-link">[Click for details]</span></td>
   </tr>
     <tr id="sub-table-ethnicity" class="sub-table">
     <td colspan="2">
@@ -189,7 +149,7 @@
     </td>
   </tr>
   <tr onclick="toggleSubTable('sub-table-visit')" style="cursor: pointer;">
-    <td>visit_concept_id</td><td>INT</td><td>Identifier for the type of visit [Click for details]</td>
+    <td>visit_concept_id</td><td>INT</td><td>Identifier for the type of visit <span class="cell-link">[Click for details]</span></td>
   </tr>
     <tr id="sub-table-visit" class="sub-table">
     <td colspan="2">
@@ -204,7 +164,7 @@
     </td>
   </tr>
   <tr onclick="toggleSubTable('sub-table-admitted')" style="cursor: pointer;">
-    <td>admitted_from_concept_id</td><td>INT</td><td>Concept ID indicating where the patient was admitted from [Click for details]</td>
+    <td>admitted_from_concept_id</td><td>INT</td><td>Concept ID indicating where the patient was admitted from <span class="cell-link">[Click for details]</span></td>
   </tr>
     <tr id="sub-table-admitted" class="sub-table">
     <td colspan="2">
@@ -223,7 +183,7 @@
     </td>
   </tr>
   <tr onclick="toggleSubTable('sub-table-discharged')" style="cursor: pointer;">
-    <td>discharged_to_concept_id</td><td>INT</td><td>Concept ID indicating where the patient was discharged to [Click for details]</td>
+    <td>discharged_to_concept_id</td><td>INT</td><td>Concept ID indicating where the patient was discharged to <span class="cell-link">[Click for details]</span></td>
   </tr>
     <tr id="sub-table-discharged" class="sub-table">
     <td colspan="2">
@@ -241,7 +201,7 @@
     </td>
   </tr>
   <tr onclick="toggleSubTable('sub-table-payer')" style="cursor: pointer;">
-    <td>payer_concept_id</td><td>INT</td><td>Identifier for the payer [Click for details]</td>
+    <td>payer_concept_id</td><td>INT</td><td>Identifier for the payer <span class="cell-link">[Click for details]</span></td>
   </tr>
     <tr id="sub-table-payer" class="sub-table">
     <td colspan="2">
@@ -273,7 +233,7 @@
   <tr><td>person_id</td><td>INT</td><td>Foreign key for person identifier</td></tr>
   <tr><td>care_site_id</td><td>INT</td><td>Unique id for this specific unit <a href="#cs">(see CARE_SITE reference table)</a></td></tr>
     <tr onclick="toggleSubTable('sub-table-service')" style="cursor: pointer;">
-    <td>place_of_service_concept_id</td><td>INT</td><td>Type of unit [Click for details]</td></tr>
+    <td>place_of_service_concept_id</td><td>INT</td><td>Type of unit <span class="cell-link">[Click for details]</span></td></tr>
     <tr id="sub-table-service" class="sub-table">
     <td colspan="2">
       <table width="100%">
@@ -307,7 +267,7 @@
   </tr>
   <tr><td>person_id</td><td>INT</td><td>Unique identifier for records in this table</td></tr>
   <tr><td>death_datetime</td><td>DATETIME</td><td>Timestamp of death</td></tr>
-  <tr onclick="toggleSubTable('sub-table-death')" style="cursor: pointer;"><td>death_type_concept_id</td><td>INT</td><td>Source of death information [Click for details]</td>
+  <tr onclick="toggleSubTable('sub-table-death')" style="cursor: pointer;"><td>death_type_concept_id</td><td>INT</td><td>Source of death information <span class="cell-link">[Click for details]</span></td>
   </tr>
     <tr id="sub-table-death" class="sub-table">
     <td colspan="2">
@@ -470,7 +430,7 @@
   <tr><td>specialty_concept_id</td><td>VARCHAR(50)</td><td>Represents the specialty of the provider (need to add subtable)</td></tr>
   <tr><td>year_of_birth</td><td>TINYINT</td><td>Birth year</td></tr>
   <tr onclick="toggleSubTable('sub-table-genderP')" style="cursor: pointer;">
-  <td>gender_concept_id</td><td>INT</td><td>Identifier for the gender concept [Click for details]</td>
+  <td>gender_concept_id</td><td>INT</td><td>Identifier for the gender concept <span class="cell-link">[Click for details]</span></td>
   </tr>
     <tr id="sub-table-genderP" class="sub-table">
     <td colspan="2">
@@ -514,7 +474,7 @@
   <tr><td>care_site_id</td><td>INT</td><td>Unique identifier for records in this table</td></tr>
   <tr><td>care_site_name</td><td>VARCHAR(50)</td><td>Full name of the location</td></tr>
 <tr onclick="toggleSubTable('sub-table-serviceC')" style="cursor: pointer;">
-    <td>place_of_service_concept_id</td><td>INT</td><td>Type of unit [Click for details]</td></tr>
+    <td>place_of_service_concept_id</td><td>INT</td><td>Type of unit <span class="cell-link">[Click for details]</span></td></tr>
     <tr id="sub-table-serviceC" class="sub-table">
     <td colspan="2">
       <table width="100%">

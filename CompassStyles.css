@@ -1,0 +1,82 @@
+/* Base table styling */
+table {
+  width: 100%; /* Default to 100% width, most common across definitions */
+  border-collapse: collapse;
+  table-layout: auto; /* Added from one definition to allow content-based resizing */
+}
+
+/* Table cells */
+th, td {
+  padding: 8px; /* Default to 8px (most common), override to 4px where specified */
+  text-align: left;
+  border: 1px solid #ddd;
+  white-space: nowrap; /* Added from one definition to prevent wrapping */
+}
+
+/* Column width classes */
+.col-10 { width: 10%; }
+.col-20 { width: 20%; }
+.col-30 { width: 30%; }
+.col-60 { width: 60%; }
+.col-80 { width: 80%; }
+
+/* Sub-table styling */
+.sub-table {
+  display: none; /* Hidden by default */
+  background-color: #f9f9f9;
+}
+
+/* Table of Contents */
+.toc {
+  margin-bottom: 20px; /* Consistent across all definitions */
+}
+
+.toc h3 {
+  color: #003594; /* Specific styling for TOC headings */
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: #003594; /* Consistent across all definitions */
+}
+
+.cell-link {
+	color: #003594;
+}
+
+/* Banner image */
+.banner-image {
+  width: 100vw; /* Consistent across all definitions */
+}
+
+/* Additional layout classes */
+.domain-section {
+  margin-top: 40px;
+}
+
+.back-to-top {
+  margin-top: 20px;
+  font-size: 0.9em;
+}
+
+/* Body and container */
+body {
+  font-family: Arial, sans-serif; /* Consistent where specified */
+}
+
+.container {
+  margin: 20px;
+}
+
+/* Toggle button and hidden content */
+.toggle-btn {
+  cursor: pointer;
+  color: #003594;
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+  margin-left: 20px;
+}
