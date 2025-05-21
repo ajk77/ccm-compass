@@ -17,17 +17,14 @@
   /***
   For ConceptSelectionForm.html
   ***/
- function toggle(id, iconId) {
+function toggle(id, iconId) {
 	let element = document.getElementById(id);
 	let icon = document.getElementById(iconId);
-	if (element.style.display === '' || element.style.display === 'none') {
-		element.style.display = 'block';
-		icon.textContent = '▼';
-	} else {
-		element.style.display = 'none';
-		icon.textContent = '▶';
-	}
-};
+
+	element.classList.toggle('hidden');
+	icon.textContent = element.classList.contains('hidden') ? '▶' : '▼';
+}
+
 
 function toggleGroup(groupCheckbox, groupId) {
 	let checkboxes = document.querySelectorAll('.' + groupId);
@@ -36,7 +33,7 @@ function toggleGroup(groupCheckbox, groupId) {
 	});
 };
 
-function downloadList() {
+function downloadList(downloadFileName) {
 // Get all checked checkboxes
 const checkedItems = Array.from(document.querySelectorAll('input[name="concept"]:checked'))
 	.map(item => item.value);
@@ -58,7 +55,7 @@ const url = window.URL.createObjectURL(blob);
 // Create a temporary link element
 const link = document.createElement('a');
 link.href = url;
-link.download = 'selected_items.txt';
+link.download = downloadFileName;
 
 // Programmatically click the link to trigger download
 document.body.appendChild(link);

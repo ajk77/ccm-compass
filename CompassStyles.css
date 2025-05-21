@@ -31,10 +31,6 @@ th, td {
   margin-bottom: 20px; /* Consistent across all definitions */
 }
 
-.toc h3 {
-  color: #003594; /* Specific styling for TOC headings */
-}
-
 /* Links */
 a {
   text-decoration: none;
