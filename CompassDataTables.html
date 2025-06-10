@@ -25,29 +25,33 @@
     <li><a href="#de">DEVICE_EXPOSURE</a></li>
     <li><a href="#m">MEASUREMENT</a></li>
     <li><a href="#o">OBSERVATION</a></li>
-    <li><a href="#drug">DRUG_EXPOSURE</a></li>
+    <li><a href="#ma">MED_ADMIN</a></li>
+	<li><a href="#ir">INFUSION_RATE</a></li>
+	<li><a href="#cu">CULTURE</a></li>
+	<li><a href="#mi">MICROBIOLOGY</a></li>
+	<li><a href="#s">SUSCEPTIBILITY</a></li>
   </ul>
 <h3>Reference Tables</h3>
   <ul>
     <li><a href="#p">PROVIDER</a></li>
 	<li><a href="#l">LOCATION</a></li>
 	<li><a href="#cs">CARE_SITE</a></li>
-    <!--<li><a href="#fd">FLAG_DEFINITION</a></li>-->
+    <!--<li><a href="#fd">FLAG_DEFINITION</a></li>
 	<li><a href="#concept">CONCEPT</a></li>
 	<li><a href="#cd">COHORT_DEFINITION</a></li>
 	<li><a href="#cohort">COHORT</a></li>
 	<li><a href="#vsd">VALUE_SET_DEFINITION</a></li>
-	<li><a href="#vs">VALUE_SET</a></li>
+	<li><a href="#vs">VALUE_SET</a></li>-->
   </ul>
  <h3>Derived Tables</h3>
   <ul>
     <li><a href="#did">DAILY_IMV_DETAIL</a></li>
-    <li><a href="#cc">COMORBIDITIES</a></li>
+    <!--<li><a href="#cc">COMORBIDITIES</a></li>-->
 	<!--<li><a href="#fdc">FLAG_DAILY</a></li>-->
 	<!--<li><a href="#fhc">FLAG_HOSPITALIZATION</a></li>-->
   </ul>
 </div>
-<i>Last updated 04/07/2025</i> 
+<i>Last updated 06/09/2025</i> 
 <hr>
 
 <!-- HOSPITALIZATION_COMPASS Table -->
@@ -99,7 +103,7 @@
     </td>
   </tr>
   <tr>
-    <td>age_at_admit</td><td>INT</td><td>Age in years (for safe harbor datasets, all ages &ge;80 will be represented with the average age of all &ge;80 hospitalizations)</td>
+    <td>age_at_admit</td><td>INT</td><td>Age in years (for safe harbor datasets, all ages &ge;79 will be set to 80)</td>
   </tr>
   <tr onclick="toggleSubTable('sub-table-gender')" style="cursor: pointer;">
     <td>gender_concept_id</td><td>INT</td><td>Identifier for the gender concept <span class="cell-link">[Click for details]</span></td>
@@ -223,7 +227,6 @@
 	<th class="col-10">Data Type</th>
 	<th class="col-60">Description</th>
   </tr>
-  <tr><td>visit_detail_id</td><td>INT</td><td>Unique identifier for records in this table</td></tr>
   <tr><td>visit_occurrence_id</td><td>BIGINT</td><td>Foreign key for hospitalization identifier</td></tr>
   <tr><td>person_id</td><td>INT</td><td>Foreign key for person identifier</td></tr>
   <tr><td>care_site_id</td><td>INT</td><td>Unique id for this specific unit <a href="#cs">(see CARE_SITE reference table)</a></td></tr>
@@ -233,17 +236,33 @@
     <td colspan="2">
       <table width="100%">
         <tr><th>Id</th><th>Name</th></tr>
-	    <tr><td>8870</td><td>Emergency Room - Hospital</td></tr>
-		<tr><td>2072499988</td><td>Trauma Intensive Care Unit</td></tr>
+		<tr><td>8870</td><td>Emergency Room - Hospital</td></tr>
+		<tr><td>581384</td><td>Inpatient Nursery</td></tr>
+		<tr><td>8920</td><td>Comprehensive Inpatient Rehabilitation Facility</td></tr>
 		<tr><td>2072499989</td><td>Surgical Intensive Care Unit</td></tr>
 		<tr><td>2072499993</td><td>Neurological Intensive Care Unit</td></tr>
+		<tr><td>2072499994</td><td>Neonatal Intensive Care Unit</td></tr>
+		<tr><td>2072499996</td><td>Intermediate Care Unit</td></tr>
+		<tr><td>2072499999</td><td>Coronary Care Unit</td></tr>
 		<tr><td>2072500000</td><td>Intensive Care Unit</td></tr>
 		<tr><td>2072500001</td><td>Medical Intensive Care Unit</td></tr>
 		<tr><td>2072500002</td><td>Burn Intensive Care Unit</td></tr>
-		<tr><td>2072500004</td><td>Neurosurgical Intensive Care Unit</td></tr>
-		<tr><td>2072500005</td><td>Cardiothoracic Intensive Care Unit</td></tr>
-		<tr><td>2072500007</td><td>Cardiac Intensive Care Unit</td></tr>
-		<tr><td>0</td><td>Unknown/Unmapped</td></tr>
+		<tr><td>2072500011</td><td>Medical Floor</td></tr>
+		<tr><td>2072500012</td><td>Medical Surgical Floor</td></tr>
+		<tr><td>2072500013</td><td>Telemetry Unit</td></tr>
+		<tr><td>2072500014</td><td>Outpatient/Ambulatory</td></tr>
+		<tr><td>2072500016</td><td>Labor and Delivery Unit</td></tr>
+		<tr><td>2072500017</td><td>Operating Room</td></tr>
+		<tr><td>2072500018</td><td>Stepdown Unit</td></tr>
+		<tr><td>2072500019</td><td>Surgical Trauma Intensive Care Unit</td></tr>
+		<tr><td>2072500020</td><td>Medical Surgical Intensive Care Unit</td></tr>
+		<tr><td>2072500021</td><td>Cardiac Vascular Intensive Care Unit</td></tr>
+		<tr><td>2072500025</td><td>Transplant Intensive Care Unit</td></tr>
+		<tr><td>2072500026</td><td>Cardiovascular Surgical and Transplant Intensive Care Unit</td></tr>
+		<tr><td>2072500027</td><td>Neuro Stepdown</td></tr>
+		<tr><td>2072500029</td><td>Postoperative/Postprocedure Care Unit</td></tr>
+		<tr><td>2072500030</td><td>Psychiatry and Behavioral Medicine Unit</td></tr>
+		<tr><td>0</td><td>Unknown/unmapped</td></tr>
       </table>
     </td>
   </tr>
@@ -322,7 +341,6 @@
     <th class="col-10">Data Type</th>
     <th class="col-60">Description</th>
   </tr>
-  <tr><td>device_exposure_id</td><td>INT</td><td>Unique identifier for records in this table</td></tr>
   <tr><td>visit_occurrence_id</td><td>BIGINT</td><td>Foreign key for hospitalization identifier</td></tr>
   <tr><td>person_id</td><td>INT</td><td>Foreign key for person identifier</td></tr>
   <tr><td>device_concept_id</td><td>INT</td><td>Represents the name of the device <a href="./CompassDataElements.html">(see Compass Data Elements page)</a></td></tr>
@@ -380,9 +398,37 @@
   <tr><td>source_code_units</td><td>VARCHAR</td><td>(This column is used for QA)</td></tr>
 </table>
 
-<!-- DRUG_EXPOSURE Table -->
+<!-- MED_ADMIN Table -->
 <br>
-<strong id="drug">DRUG_EXPOSURE</strong><a href="#top">  [Top]</a>
+<strong id="ma">MED_ADMIN</strong><a href="#top">  [Top]</a>
+<table>
+  <tr>
+    <th class="col-30">Column Name</th>
+    <th class="col-10">Data Type</th>
+    <th class="col-60">Description</th>
+  </tr>
+  
+  <tr><td>visit_occurrence_id</td><td>BIGINT</td><td>Foreign key for hospitalization identifier</td></tr>
+  <tr><td>person_id</td><td>INT</td><td>Foreign key for person identifier</td></tr>
+  <tr><td>med_admin_id</td><td>INT</td><td>An identifer for this administration event</td></tr>
+  <tr><td>parent_med_admin_id</td><td>INT</td><td>The identifier for the parent administration event</td></tr>
+  <tr><td>med_order_id</td><td>INT</td><td>An identifier for the medication order this administration is provided under</td></tr>
+  <tr><td>med_admin_datetime</td><td>DATETIME</td><td>Timestamp of the medication administration</td></tr>
+  <tr><td>source_value</td><td>VARCHAR(50)</td><td>The display name of the medication administration</td></tr>
+  <tr><td>med_category</td><td>VARCHAR(50)</td><td>A localized categorical grouping of the medication administration</td></tr>
+  <tr><td>med_group</td><td>VARCHAR(50)</td><td>A localized grouping representing the type of medication administration</td></tr>
+  <tr><td>admin_dosage</td><td>DECIMAL</td><td>The volume of administration</td></tr>
+  <tr><td>dosage_unit</td><td>VARCHAR(50)</td><td>The units of the administration</td></tr>
+  <tr><td>admin_route</td><td>VARCHAR(50)</td><td>The route of administration</td></tr>
+  <tr><td>admin_site</td><td>VARCHAR(50)</td><td>The location of the administration</td></tr>
+  <tr><td>iv_event</td><td>VARCHAR(50)</td><td>Details on if this administration was intravenous</td></tr>
+  <tr><td>provider_id</td><td>INT</td><td>The person who documented the administration <a href="#p">(see PROVIDER reference table)</a></td></tr>
+  <tr><td>source_code</td><td>INT</td><td>(This column is used for QA)</td></tr>
+</table>
+
+<!-- INFUSION_RATE Table -->
+<br>
+<strong id="ir">INFUSION_RATE</strong><a href="#top">  [Top]</a>
 <table>
   <tr>
     <th class="col-30">Column Name</th>
@@ -392,25 +438,79 @@
   <!--<tr><td>drug_exposure_id</td><td>INT</td><td>Unique identifier for records in this table</td></tr>-->
   <tr><td>visit_occurrence_id</td><td>BIGINT</td><td>Foreign key for hospitalization identifier</td></tr>
   <tr><td>person_id</td><td>INT</td><td>Foreign key for person identifier</td></tr>
-  <tr><td>drug_concept_id</td><td>INT</td><td>Represents the type of drug <a href="./CompassDataElements.html">(see Compass Data Elements page)</a></td></tr>
-  <tr><td>drug_exposure_datetime</td><td>DATETIME</td><td>Timestamp of the start of the event</td></tr>
-  <tr><td>amount_value</td><td>DECIMAL</td><td>The volume of administration</td></tr>
-  <tr><td>amount_unit_concept_id</td><td>INT</td><td>Concept id for the units of the administration (need to add subtable)</td></tr>
-  <tr><td>infusion_rate</td><td>DECIMAL</td><td>For IV drugs, include rate</td></tr>
-  <tr><td>infusion_rate_unit_concept_id</td><td>INT</td><td>Concept id for rate unit (need to add subtable)</td></tr>
-  <tr><td>infusion_event_concept_id</td><td>INT</td><td>Concept id for infusion events (need to add subtable)</td></tr>
-  <tr><td>route_concept_id</td><td>INT</td><td>Route of administration (need to add subtable)</td></tr>
-  <tr><td>admin_site_concept_id</td><td>INT</td><td>Location of administration (need to add subtable)</td></tr>
-  <tr><td>dose_quantity</td><td>DECIMAL</td><td>The quantiy of administration (need to add subtable)</td></tr>
-  <tr><td>dose_quantity_unit_concept_id</td><td>INT</td><td>Concept id of the units of the quantity of administration (need to add subtable)</td></tr>
-  <tr><td>frequency_concept_id</td><td>INT</td><td>Concept of the prescribed administration frequency (need to add subtable)</td></tr>
+  <tr><td>med_admin_id</td><td>INT</td><td>An identifer for this administration event</td></tr>
+  <tr><td>parent_med_admin_id</td><td>INT</td><td>The identifier for the parent administration event</td></tr>
+  <tr><td>med_order_id</td><td>INT</td><td>An identifier for the medication order this administration is provided under</td></tr>
+  <tr><td>infusion_rate_datetime</td><td>DATETIME</td><td>Timestamp of the start of the event</td></tr>
+ <tr><td>source_value</td><td>VARCHAR(50)</td><td>The display name of the medication administration</td></tr>
+  <tr><td>med_category</td><td>VARCHAR(50)</td><td>A localized categorical grouping of the medication administration</td></tr>
+  <tr><td>med_group</td><td>VARCHAR(50)</td><td>A localized grouping representing the type of medication administration</td></tr>
+  <tr><td>infusion_rate</td><td>DECIMAL</td><td>The rate of administration</td></tr>
+  <tr><td>infusion_unit</td><td>VARCHAR(50)</td><td>The units of the infusion</td></tr>
+  <tr><td>admin_route</td><td>VARCHAR(50)</td><td>The route of administration</td></tr>
+  <tr><td>admin_site</td><td>VARCHAR(50)</td><td>The location of the administration</td></tr>
+  <tr><td>iv_event</td><td>VARCHAR(50)</td><td>Details on if this administration was intravenous</td></tr>
   <tr><td>provider_id</td><td>INT</td><td>The person who documented the administration <a href="#p">(see PROVIDER reference table)</a></td></tr>
-  <tr><td>flag_intravenous_med</td><td>BIT</td><td>1 if record is an intravenous medication, otherwise 0</td></tr>
-  <tr><td>flag_discharge_med</td><td>BIT</td><td>1 if record is a prescription medication ordered at discharge, otherwise 0</td></tr>
-  <tr><td>flag_existing_home_med</td><td>BIT</td><td>1 if record is an existing home medication, otherwise 0</td></tr>
-  <tr><td>source_code</td><td>INT</td><td>(This column is used for QA)</td></tr>
+  <tr><td>source_code</td><td>INT</td><td>(This column is used for QA)</td></tr>  
+</table>
+
+<!-- CULTURE Table -->
+<br>
+<strong id="cu">CULTURE</strong><a href="#top">  [Top]</a>
+<table>
+  <tr>
+    <th class="col-30">Column Name</th>
+    <th class="col-10">Data Type</th>
+    <th class="col-60">Description</th>
+  </tr>
+  <tr><td>visit_occurrence_id</td><td>BIGINT</td><td>Foreign key for hospitalization identifier</td></tr>
+  <tr><td>person_id</td><td>INT</td><td>Foreign key for person identifier</td></tr>
+  <tr><td>culture_datetime</td><td>DATETIME</td><td>Timestamp of the time the sample was taken</td></tr>
+  <tr><td>ordered_datetime</td><td>DATETIME</td><td>Timestamp of the time the sample was ordered</td></tr>
+  <tr><td>event_id</td><td>INT</td><td>A unique identifier for the culture</td></tr>
+  <tr><td>specimen_concept_id</td><td>INT</td><td>The type specimen collected</td></tr>
+  <tr><td>anatomic_site_concept_id</td><td>INT</td><td>The body site where the specimen was collected from</td></tr>
+  <tr><td>provider_id</td><td>INT</td><td>The person who ordered the culture <a href="#p">(see PROVIDER reference table)</a></td></tr>
+</table>
+
+<!-- MICROBIOLOGY Table -->
+<br>
+<strong id="mi">MICROBIOLOGY</strong><a href="#top">  [Top]</a>
+<table>
+  <tr>
+    <th class="col-30">Column Name</th>
+    <th class="col-10">Data Type</th>
+    <th class="col-60">Description</th>
+  </tr>
+  <tr><td>visit_occurrence_id</td><td>BIGINT</td><td>Foreign key for hospitalization identifier</td></tr>
+  <tr><td>person_id</td><td>INT</td><td>Foreign key for person identifier</td></tr>
+  <tr><td>microbiology_datetime</td><td>DATETIME</td><td>Timestamp of the microbiology result</td></tr>
+  <tr><td>parent_event_id</td><td>INT</td><td>Foreign key to CULTURE table</td></tr>
+  <tr><td>category</td><td>VARCHAR(50)</td><td>The type result data</td></tr>
+  <tr><td>group</td><td>VARCHAR(50)</td><td>The result within a localized hierarchy</td></tr>
   <tr><td>source_value</td><td>VARCHAR(50)</td><td>(This column is used for QA)</td></tr>
 </table>
+
+<!-- SUSCEPTIBILITY Table -->
+<br>
+<strong id="s">SUSCEPTIBILITY</strong><a href="#top">  [Top]</a>
+<table>
+  <tr>
+    <th class="col-30">Column Name</th>
+    <th class="col-10">Data Type</th>
+    <th class="col-60">Description</th>
+  </tr>
+  
+  <tr><td>visit_occurrence_id</td><td>BIGINT</td><td>Foreign key for hospitalization identifier</td></tr>
+  <tr><td>person_id</td><td>INT</td><td>Foreign key for person identifier</td></tr>
+  <tr><td>susceptibiltiy_datetime</td><td>DATETIME</td><td>Timestamp of the susceptibility result</td></tr>
+  <tr><td>parent_event_id</td><td>INT</td><td>Foreign key to CULTURE table</td></tr>
+  <tr><td>SUSCEPTIBILITY_TEST_CD</td><td>INT</td><td>The source code for the test used</td></tr>
+  <tr><td>DETAIL_SUSCEPTIBILITY_CD</td><td>INT</td><td>The source code for result of the test</td></tr>
+  <tr><td>ANTIBIOTIC_CD</td><td>INT</td><td>The source code for the antibiotic tested</td></tr>
+  <tr><td>SUSCEPTIBILITY_STATUS_CD</td><td>INT</td><td>The source code for the status of the result</td></tr>
+</table>
+
 
 <!-- PROVIDER Table -->
 <br>
@@ -422,9 +522,10 @@
     <th class="col-60">Description</th>
   </tr>
   <tr><td>provider_id</td><td>INT</td><td>Unique identifier for records in this table</td></tr>
-  <tr><td>specialty_concept_id</td><td>VARCHAR(50)</td><td>Represents the specialty of the provider (need to add subtable)</td></tr>
-  <tr><td>year_of_birth</td><td>TINYINT</td><td>Birth year</td></tr>
-  <tr onclick="toggleSubTable('sub-table-genderP')" style="cursor: pointer;">
+  <!--<tr><td>specialty_concept_id</td><td>INT</td><td>Represents the specialty of the provider (need to add subtable)</td></tr>-->
+  <tr><td>POSITION_CD</td><td>INT</td><td>The source value of the type of provider</td></tr>
+  <!--<tr><td>year_of_birth</td><td>TINYINT</td><td>Birth year</td></tr>-->
+  <!--<tr onclick="toggleSubTable('sub-table-genderP')" style="cursor: pointer;">
   <td>gender_concept_id</td><td>INT</td><td>Identifier for the gender concept <span class="cell-link">[Click for details]</span></td>
   </tr>
     <tr id="sub-table-genderP" class="sub-table">
@@ -435,7 +536,7 @@
 	  <tr><td>8657</td><td>Female</td></tr>
 	  <tr><td>8516</td><td>Male</td></tr>
 	  </table>
-    </td>
+    </td>-->
   </tr>
 </table>
 
@@ -475,16 +576,32 @@
       <table width="100%">
         <tr><th>Id</th><th>Name</th></tr>
 		<tr><td>8870</td><td>Emergency Room - Hospital</td></tr>
-		<tr><td>2072499988</td><td>Trauma Intensive Care Unit</td></tr>
+		<tr><td>581384</td><td>Inpatient Nursery</td></tr>
+		<tr><td>8920</td><td>Comprehensive Inpatient Rehabilitation Facility</td></tr>
 		<tr><td>2072499989</td><td>Surgical Intensive Care Unit</td></tr>
 		<tr><td>2072499993</td><td>Neurological Intensive Care Unit</td></tr>
+		<tr><td>2072499994</td><td>Neonatal Intensive Care Unit</td></tr>
+		<tr><td>2072499996</td><td>Intermediate Care Unit</td></tr>
+		<tr><td>2072499999</td><td>Coronary Care Unit</td></tr>
 		<tr><td>2072500000</td><td>Intensive Care Unit</td></tr>
 		<tr><td>2072500001</td><td>Medical Intensive Care Unit</td></tr>
 		<tr><td>2072500002</td><td>Burn Intensive Care Unit</td></tr>
-		<tr><td>2072500004</td><td>Neurosurgical Intensive Care Unit</td></tr>
-		<tr><td>2072500005</td><td>Cardiothoracic Intensive Care Unit</td></tr>
-		<tr><td>2072500007</td><td>Cardiac Intensive Care Unit</td></tr>
-		<tr><td>0</td><td>Unknown/Unmapped</td></tr>
+		<tr><td>2072500011</td><td>Medical Floor</td></tr>
+		<tr><td>2072500012</td><td>Medical Surgical Floor</td></tr>
+		<tr><td>2072500013</td><td>Telemetry Unit</td></tr>
+		<tr><td>2072500014</td><td>Outpatient/Ambulatory</td></tr>
+		<tr><td>2072500016</td><td>Labor and Delivery Unit</td></tr>
+		<tr><td>2072500017</td><td>Operating Room</td></tr>
+		<tr><td>2072500018</td><td>Stepdown Unit</td></tr>
+		<tr><td>2072500019</td><td>Surgical Trauma Intensive Care Unit</td></tr>
+		<tr><td>2072500020</td><td>Medical Surgical Intensive Care Unit</td></tr>
+		<tr><td>2072500021</td><td>Cardiac Vascular Intensive Care Unit</td></tr>
+		<tr><td>2072500025</td><td>Transplant Intensive Care Unit</td></tr>
+		<tr><td>2072500026</td><td>Cardiovascular Surgical and Transplant Intensive Care Unit</td></tr>
+		<tr><td>2072500027</td><td>Neuro Stepdown</td></tr>
+		<tr><td>2072500029</td><td>Postoperative/Postprocedure Care Unit</td></tr>
+		<tr><td>2072500030</td><td>Psychiatry and Behavioral Medicine Unit</td></tr>
+		<tr><td>0</td><td>Unknown/unmapped</td></tr>
       </table>
     </td>
   </tr>
@@ -513,7 +630,7 @@
 </table>
 -->
 
-<!-- CONCEPT Table -->
+<!-- CONCEPT Table --><!--
 <br>
 <strong id="concept">CONCEPT</strong><a href="#top">  [Top]</a>
 <table>
@@ -527,7 +644,7 @@
   <tr><td>domain_id</td><td>VARCHAR(2)</td><td>The domain for which the concept belongs</td></tr>
 </table>
 
-<!--COHORT_DEFINITION Table -->
+<!--COHORT_DEFINITION Table --><!--
 <br>
 <strong id="cd">COHORT_DEFINITION</strong><a href="#top">  [Top]</a>
 <table>
@@ -545,7 +662,7 @@
   <tr><td>cohort_definition_last_update</td><td>DATE</td><td>The date that the chort definition was last editied</td></tr>
 </table>
 
-<!-- COHORT Table -->
+<!-- COHORT Table --><!--
 <br>
 <strong id="cohort">COHORT</strong><a href="#top">  [Top]</a>
 <table>
@@ -560,7 +677,7 @@
   <tr><td>cohort_end_datetime</td><td>DATETIME</td><td>When the subject no longer meets the cohort definition</td></tr>
 </table>
 
-<!-- VALUE_SET_DEFINITION Table -->
+<!-- VALUE_SET_DEFINITION Table --><!--
 <br>
 <strong id="vsd">VALUE_SET_DEFINITION</strong><a href="#top">  [Top]</a>
 <table>
@@ -577,7 +694,7 @@
   <tr><td>value_set_definition_last_update</td><td>DATE</td><td>The date that the value_set_definition was last editied</td></tr>
 </table>
 
-<!-- VALUE_SET Table -->
+<!-- VALUE_SET Table --><!--
 <br>
 <strong id="vs">VALUE_SET</strong><a href="#top">  [Top]</a>
 <table>
@@ -588,7 +705,7 @@
   </tr>
   <tr><td>concept_id</td><td>INT</td><td>Member of the value_set</td></tr>
   <tr><td>value_set_definition_id</td><td>INT</td><td><a href="#vsd">(see VALUE_SET_DEFINITION reference table)</td></tr>
-</table>
+</table>-->
 
 <!-- DAILY_IMV_DETAIL Table -->
 <br>
@@ -601,7 +718,7 @@
 	</tr>
 	<!--<tr><td>imv_daily_id</td><td>INT</td><td>Unique identifier for records in this table</td></tr>-->
 	<tr><td>visit_occurrence_id</td><td>BIGINT</td><td>Foreign key for hospitalization identifier</td></tr>
-	<tr><td>imv_daily_date</td><td>DATE</td><td>The date of this row in the table.</td></tr>
+	<tr><td>daily_imv_date</td><td>DATE</td><td>The date of this row in the table.</td></tr>
 	<tr><td>flag_airway_intubated</td><td>BIT</td><td>1 if this tube type was documented during the calendar day, else 0.</td></tr>
 	<tr><td>flag_airway_tracheostomy</td><td>BIT</td><td>1 if this tube type was documented during the calendar day, else 0.</td></tr>
 	<tr><td>max_oxygen_flow_rate_LPM</td><td>DECIMAL</td><td>Max O2 flow rate (LPM) documented during the day; ignore values above 100 or below 0.</td></tr>
@@ -624,7 +741,7 @@
 </table>
 
 <!-- COMORBIDITIES Table -->
-<br>
+<!--<br>
 <strong id="cc">COMORBIDITIES</strong><a href="#top">  [Top]</a>
 <table>
 	<tr>
@@ -667,7 +784,7 @@
 	<tr><td>Psycho</td><td>BIT</td><td>Psychoses</td></tr>
 	<tr><td>Depre</td><td>BIT</td><td>Depression</td></tr>
 
-</table>
+</table> -->
 
 <!-- FLAG_DAILY Table -->
 <!--
