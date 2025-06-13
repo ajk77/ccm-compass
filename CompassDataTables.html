@@ -335,19 +335,7 @@
 <!-- DEVICE_EXPOSURE Table -->
 <br>
 <strong id="de">DEVICE_EXPOSURE</strong><a href="#top">  [Top]</a>
-<table>
-  <tr>
-    <th class="col-30">Column Name</th>
-    <th class="col-10">Data Type</th>
-    <th class="col-60">Description</th>
-  </tr>
-  <tr><td>visit_occurrence_id</td><td>BIGINT</td><td>Foreign key for hospitalization identifier</td></tr>
-  <tr><td>person_id</td><td>INT</td><td>Foreign key for person identifier</td></tr>
-  <tr><td>device_concept_id</td><td>INT</td><td>Represents the name of the device <a href="./CompassDataElements.html">(see Compass Data Elements page)</a></td></tr>
-  <tr><td>device_exposure_start_datetime</td><td>DATETIME</td><td>Timestamp of the event</td></tr>
-  <tr><td>provider_id</td><td>INT</td><td>The person who charted the device <a href="#p">(see PROVIDER reference table)</a></td></tr>
-  <tr><td>source_code</td><td>VARCHAR</td><td>(This column is used for QA)</td></tr>
-</table>
+<p style="color: gray;">Note: DEVICE_EXPOSURE is not currently supported. Relevant data is instead recorded in the <a href="#o">OBSERVATION</a> table.</p>
 
 <!-- MEASUREMENT Table -->
 <br>
