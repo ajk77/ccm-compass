@@ -17,6 +17,27 @@
   /***
   For ConceptSelectionForm.html
   ***/
+function toggleAll(button) {
+	const isExpanding = button.textContent === 'Expand All';
+
+	// Toggle item visibility
+	document.querySelectorAll('[id^="item"]').forEach(element => {
+		if (isExpanding) {
+			element.classList.remove('hidden');
+		} else {
+			element.classList.add('hidden');
+		}
+	});
+
+	// Update icons
+	document.querySelectorAll('[id^="icon"]').forEach(icon => {
+		icon.textContent = isExpanding ? '▼' : '▶';
+	});
+
+	// Update button text
+	button.textContent = isExpanding ? 'Collapse All' : 'Expand All';
+}
+
 function toggle(id, iconId) {
 	let element = document.getElementById(id);
 	let icon = document.getElementById(iconId);

@@ -349,7 +349,7 @@
   <!--<tr><td>measurement_id</td><td>INT</td><td>Unique identifier for records in this table</td></tr>-->
   <tr><td>visit_occurrence_id</td><td>BIGINT</td><td>Foreign key for hospitalization identifier</td></tr>
   <tr><td>person_id</td><td>INT</td><td>Foreign key for person identifier</td></tr>
-  <tr><td>measurement_concept_id</td><td>INT</td><td>Represents the name of the measurement <a href="./CompassSelectionForm.html">(see Compass Data Selection Form)</a></td></tr>
+  <tr><td>measurement_concept_id</td><td>INT</td><td>Represents the name of the measurement <a href="./ConceptSelectionForm.html">(see Concept Selection Form)</a></td></tr>
   <tr><td>measurement_datetime</td><td>DATETIME</td><td>Timestamp of the event</td></tr>
   <tr><td>value_as_number</td><td>DECIMAL</td><td>Result parsed to be a number</td></tr>
   <tr><td>value_source_value</td><td>VARCHAR(50)</td><td>Event tag</td></tr>
@@ -374,7 +374,7 @@
   <!--<tr><td>observation_id</td><td>INT</td><td>Unique identifier for records in this table</td></tr>-->
   <tr><td>visit_occurrence_id</td><td>BIGINT</td><td>Foreign key for hospitalization identifier</td></tr>
   <tr><td>person_id</td><td>INT</td><td>Foreign key for person identifier</td></tr>
-  <tr><td>observation_concept_id</td><td>INT</td><td>Represents the name of the observation <a href="./CompassSelectionForm.html">(see Compass Data Selection Form)</a></td></tr>
+  <tr><td>observation_concept_id</td><td>INT</td><td>Represents the name of the observation <a href="./ConceptSelectionForm.html">(see Concept Selection Form)</a></td></tr>
   <tr><td>observation_datetime</td><td>DATETIME</td><td>Timestamp of the event</td></tr>
   <tr><td>value_as_number</td><td>DECIMAL</td><td>Result parsed to be a number</td></tr>
   <tr><td>value_as_string</td><td>VARCHAR(60)</td><td>String value of the result</td></tr>
@@ -402,7 +402,7 @@
   <tr><td>parent_med_admin_id</td><td>INT</td><td>The identifier for the parent administration event</td></tr>
   <tr><td>med_order_id</td><td>INT</td><td>An identifier for the medication order this administration is provided under</td></tr>
   <tr><td>med_admin_datetime</td><td>DATETIME</td><td>Timestamp of the medication administration</td></tr>
-  <tr><td>source_value</td><td>VARCHAR(50)</td><td>The display name of the medication administration <a href="./MedicationSelectionForm.html">(see Compass Medication Selection Form)</a></td></tr>
+  <tr><td>source_value</td><td>VARCHAR(50)</td><td>The display name of the medication administration <a href="./MedicationSelectionForm.html">(see Medication Selection Form)</a></td></tr>
   <tr><td>med_category</td><td>VARCHAR(50)</td><td>A localized categorical grouping of the medication administration</td></tr>
   <tr><td>med_group</td><td>VARCHAR(50)</td><td>A localized grouping representing the type of medication administration</td></tr>
   <tr><td>admin_dosage</td><td>DECIMAL</td><td>The volume of administration</td></tr>
@@ -430,7 +430,7 @@
   <tr><td>parent_med_admin_id</td><td>INT</td><td>The identifier for the parent administration event</td></tr>
   <tr><td>med_order_id</td><td>INT</td><td>An identifier for the medication order this administration is provided under</td></tr>
   <tr><td>infusion_rate_datetime</td><td>DATETIME</td><td>Timestamp of the start of the event</td></tr>
- <tr><td>source_value</td><td>VARCHAR(50)</td><td>The display name of the medication administration <a href="./MedicationSelectionForm.html">(see Compass Medication Selection Form)</td></tr>
+ <tr><td>source_value</td><td>VARCHAR(50)</td><td>The display name of the medication administration <a href="./MedicationSelectionForm.html">(see Medication Selection Form)</td></tr>
   <tr><td>med_category</td><td>VARCHAR(50)</td><td>A localized categorical grouping of the medication administration</td></tr>
   <tr><td>med_group</td><td>VARCHAR(50)</td><td>A localized grouping representing the type of medication administration</td></tr>
   <tr><td>infusion_rate</td><td>DECIMAL</td><td>The rate of administration</td></tr>
