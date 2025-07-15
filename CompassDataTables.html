@@ -268,6 +268,7 @@
   </tr>
   <tr><td>visit_detail_start_datetime</td><td>DATETIME</td><td>Start timestamp</td></tr>
   <tr><td>visit_detail_end_datetime</td><td>DATETIME</td><td>End timestamp</td></tr>
+  <tr><td>location</td><td>VARCHAR</td><td>Source value of the location (unit) name</td></tr>
 </table>
 
 <!-- DEATH Table -->
@@ -325,7 +326,7 @@
   <tr><td>visit_occurrence_id</td><td>BIGINT</td><td>Foreign key for hospitalization identifier</td></tr>
   <tr><td>person_id</td><td>INT</td><td>Foreign key for person identifier</td></tr>
   <tr><td>procedure_concept_id</td><td>INT</td><td>Represents the name of the procedure (see Compass Data Procedure Page [in development])</a></td></tr>
-  <tr><td>procedure_datetime</td><td>DATETIME</td><td>Timestamp of the event</td></tr>
+  <tr><td>procedure_datetime</td><td>DATETIME</td><td>Timestamp of the event (Source data typically provides date only)</td></tr>
   <tr><td>procedure_type</td><td>CHAR</td><td>Modifier of the procedure (P: primary; S: secondary)</td></tr>
   <tr><td>procedure_priority</td><td>INT</td><td>Procedure position/priority</td></tr>
   <tr><td>provider_id</td><td>INT</td><td>The person who performed the procedure <a href="#p">(see PROVIDER reference table)</a></td></tr>
@@ -442,9 +443,9 @@
   <tr><td>source_code</td><td>INT</td><td>(This column is used for QA)</td></tr>  
 </table>
 
-<!-- CULTURE Table -->
+<!-- CULTURE_ORDER Table -->
 <br>
-<strong id="cu">CULTURE</strong><a href="#top">  [Top]</a>
+<strong id="cu">CULTURE_ORDER</strong><a href="#top">  [Top]</a>
 <table>
   <tr>
     <th class="col-30">Column Name</th>
@@ -453,13 +454,9 @@
   </tr>
   <tr><td>visit_occurrence_id</td><td>BIGINT</td><td>Foreign key for hospitalization identifier</td></tr>
   <tr><td>person_id</td><td>INT</td><td>Foreign key for person identifier</td></tr>
-  <tr><td>culture_datetime</td><td>DATETIME</td><td>Timestamp of the time the sample was taken</td></tr>
-  <tr><td>ordered_datetime</td><td>DATETIME</td><td>Timestamp of the time the sample was ordered</td></tr>
-  <tr><td>event_id</td><td>INT</td><td>A unique identifier for the culture</td></tr>
-  <tr><td>specimen_concept_id</td><td>INT</td><td>The type specimen collected</td></tr>
-  <tr><td>anatomic_site_concept_id</td><td>INT</td><td>The body site where the specimen was collected from</td></tr>
-  <tr><td>provider_id</td><td>INT</td><td>The person who ordered the culture <a href="#p">(see PROVIDER reference table)</a></td></tr>
-</table>
+  <tr><td>order_datetime</td><td>DATETIME</td><td>Timestamp of the time the sample was ordered</td></tr>
+  <tr><td>CATALOG_CD</td><td>INT</td><td>Source code of the order</td></tr>
+  </table>
 
 <!-- MICROBIOLOGY Table -->
 <br>
@@ -473,10 +470,11 @@
   <tr><td>visit_occurrence_id</td><td>BIGINT</td><td>Foreign key for hospitalization identifier</td></tr>
   <tr><td>person_id</td><td>INT</td><td>Foreign key for person identifier</td></tr>
   <tr><td>microbiology_datetime</td><td>DATETIME</td><td>Timestamp of the microbiology result</td></tr>
-  <tr><td>parent_event_id</td><td>INT</td><td>Foreign key to CULTURE table</td></tr>
-  <tr><td>category</td><td>VARCHAR(50)</td><td>The type result data</td></tr>
-  <tr><td>group</td><td>VARCHAR(50)</td><td>The result within a localized hierarchy</td></tr>
-  <tr><td>source_value</td><td>VARCHAR(50)</td><td>(This column is used for QA)</td></tr>
+  <tr><td>micro_event_id</td><td>INT</td><td>Foreign key to CULTURE table</td></tr>
+  <tr><td>MICRO_SEQ_NBR</td><td>INT</td><td>Used for distinguishing multiple organisms from same culture</td></tr>
+  <tr><td>description</td><td>VARCHAR</td><td>String value of the organism</td></tr>
+  <tr><td>snomed_code</td><td>INT</td><td>Snomed code for organism</td></tr>
+  <tr><td>source_code</td><td>INT</td><td>(This column is used for QA)</td></tr>
 </table>
 
 <!-- SUSCEPTIBILITY Table -->
@@ -492,7 +490,9 @@
   <tr><td>visit_occurrence_id</td><td>BIGINT</td><td>Foreign key for hospitalization identifier</td></tr>
   <tr><td>person_id</td><td>INT</td><td>Foreign key for person identifier</td></tr>
   <tr><td>susceptibiltiy_datetime</td><td>DATETIME</td><td>Timestamp of the susceptibility result</td></tr>
-  <tr><td>parent_event_id</td><td>INT</td><td>Foreign key to CULTURE table</td></tr>
+  <tr><td>micro_event_id</td><td>INT</td><td>Foreign key to CULTURE table</td></tr>
+  <tr><td>MICRO_SEQ_NBR</td><td>INT</td><td>Used for distinguishing multiple organisms from same culture</td></tr>
+  <tr><td>SUSCEP_SEQ_NBR</td><td>INT</td><td>Used for distinguishing multiple susceptibilities from same organism</td></tr>
   <tr><td>SUSCEPTIBILITY_TEST_CD</td><td>INT</td><td>The source code for the test used</td></tr>
   <tr><td>DETAIL_SUSCEPTIBILITY_CD</td><td>INT</td><td>The source code for result of the test</td></tr>
   <tr><td>ANTIBIOTIC_CD</td><td>INT</td><td>The source code for the antibiotic tested</td></tr>
