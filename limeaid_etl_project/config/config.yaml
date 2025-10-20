@@ -1,0 +1,6 @@
+data_dir: data/raw
+processed_dir: data/processed
+db_path: data/db/mydb.sqlite
+qa_thresholds:
+  null_rate_max: 0.05
+  duplicate_rate_max: 0.01
