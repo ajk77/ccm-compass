@@ -10,3 +10,5 @@ venv/
 .env
 *.sqlite
 *.db
+.conda/
+./limeaid_etl_project/.conda/
